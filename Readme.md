@@ -53,10 +53,10 @@ The first messenger will take on the role of master.
 
 ### Serial
 ***Arguments :***
-* ***device*** -> path of a tty device.
 * ***baudrate*** -> baudrate.
+* ***device*** -> path of a tty device.
 
-ex : `--tty /dev/ttyUSB0 57600`
+ex : `--tty 57600 /dev/ttyUSB0`
 
 ### UDP server
 ***Arguments :***
@@ -114,5 +114,5 @@ You can combine almost as many messengers as you want in command line.
 Example :
 
 ```Shell
-./mavkit --tty /dev/ttyACM0 57600 --udp_server 14550 --display --log --tcp_client 127.0.0.1 14551
+./mavkit --tty 57600 /dev/ttyACM0 --udp_server 14550 --display --log --tcp_client 127.0.0.1 14551
 ```
