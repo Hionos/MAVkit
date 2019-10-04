@@ -176,6 +176,14 @@ void MavlinkTCP::read_loop()
         }
     }
 }
+#ifndef MSG_NOSIGNAL
+# ifdef SO_NOSIGPIPE
+#  define MSG_NOSIGNAL SO_NOSIGPIPE
+# else
+#  define MSG_NOSIGNAL 0
+#  error "Cannot block SIGPIPE!"
+# endif
+#endif
 //----------------------------------------------------------------------------//
 bool MavlinkTCP::send_message(mavlink_message_t &msg)
 {

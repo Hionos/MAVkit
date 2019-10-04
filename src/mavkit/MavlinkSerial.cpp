@@ -92,12 +92,16 @@ MavlinkSerial::MavlinkSerial(std::string port , int baudrate)
         case 230400:
             baudrate_val = B230400;
             break;
+#ifdef B460800
         case 460800:
             baudrate_val = B460800;
             break;
+#endif
+#ifdef B921600
         case 921600:
             baudrate_val = B921600;
             break;
+#endif
         default:
             throw std::logic_error("Cannot handle baudrate : " + std::to_string(baudrate));
             break;
